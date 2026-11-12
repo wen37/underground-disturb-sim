@@ -1733,5 +1733,77 @@
         }
       }
     }
-  ]
+  ],
+  "clean_checkout": {
+    "run": "run_20261112T194451_417155",
+    "checkout_commit": "152053c113ad6209ac09cfc3f09c225043c1cb7e",
+    "source_hashes_match": true,
+    "tracked_worktree_clean_after_run": true,
+    "asset_restore": "117 checksums verified using documented --from-local mode; independent copied assets, no runtime dependency on original workspace",
+    "build": "coal_face_sim built from scratch; both native plugins compiled",
+    "fixed_distance": "200 rows and Excel readback passed",
+    "return_codes": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "passed": true,
+    "reports": [
+      {
+        "mode": "static",
+        "result": "20261112T194455",
+        "frames": 120,
+        "scan_hz_sim_time": 39.91949010399195,
+        "max_center_error_m": 2.2888183792701966e-07,
+        "dropped_unaligned_frames": 0,
+        "source_long_gap_count": 0,
+        "audit": {
+          "run": "20261112T194455",
+          "passed": true,
+          "csv_rows_audited": 32430,
+          "saved_frames": 30,
+          "observed_zones": [
+            "driver_medium",
+            "rear_low"
+          ],
+          "unsampled_zones": [
+            "face_high"
+          ],
+          "work_modes": [
+            "IDLE"
+          ],
+          "excel_counts_match": true
+        }
+      },
+      {
+        "mode": "motion",
+        "result": "20261112T194510",
+        "frames": 620,
+        "scan_hz_sim_time": 39.98966341494929,
+        "max_center_error_m": 0.0006002288818294232,
+        "dropped_unaligned_frames": 0,
+        "source_long_gap_count": 0,
+        "audit": {
+          "run": "20261112T194510",
+          "passed": true,
+          "csv_rows_audited": 167555,
+          "saved_frames": 155,
+          "observed_zones": [
+            "driver_medium",
+            "rear_low"
+          ],
+          "unsampled_zones": [
+            "face_high"
+          ],
+          "work_modes": [
+            "CUTTING_SIMULATED",
+            "IDLE",
+            "TRAVEL"
+          ],
+          "excel_counts_match": true
+        }
+      }
+    ]
+  }
 }
