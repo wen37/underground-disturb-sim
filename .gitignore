@@ -19,3 +19,10 @@ src/coal_face_sim/scenarios/coal_face_v1/models/**/*.jpg
 backups/
 data/
 *.log
+
+# Heading experiment outputs (sources and compact reviewed evidence are tracked)
+src/coal_scene_tools/experiments/heading/results/
+src/coal_scene_tools/experiments/heading/evidence/
+src/coal_scene_tools/experiments/lidar_fixed_distance_test/results/
+
+src/coal_scene_tools/tests/results/

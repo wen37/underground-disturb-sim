@@ -1,0 +1,98 @@
+schema_version: heading-runtime-1
+scene_id: S01_subt_heading
+scene_version: 1.0.0
+title: SubT 80m掘进全链路场景
+status: candidate
+global_frame: map
+world_frame: world
+map_to_world:
+  xyz_m:
+  - 0.0
+  - 0.0
+  - 0.0
+  rpy_rad:
+  - 0.0
+  - 0.0
+  - 0.0
+world: world/scene.sdf
+semantics: scene_semantics.yaml
+robot:
+  robot_id: robot_01
+  body_frame: roadheader_base_link
+  parent_frame: map
+  initial_pose:
+    xyz_m:
+    - 0
+    - 68
+    - 1.349
+    rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  footprint_size_m:
+  - 3.2
+  - 11.6
+  - 2.43
+station:
+  station_id: station_01
+  frame: station_link
+  parent_frame: map
+  xyz_m:
+  - 0
+  - 57.1
+  - 0.134
+  rpy_rad:
+  - 0.0
+  - 0.0
+  - 0.0
+sensors:
+  lidar:
+    sensor_id: lidar_01
+    frame: lidar_link
+    parent_frame: station_link
+    xyz_m:
+    - 0.0
+    - 0.0
+    - 1.8
+    rpy_rad:
+    - 0.0
+    - 0.0
+    - 1.5707963267948966
+    rate_hz: 40
+    beam_count: 1081
+    angle_min_rad: -2.356194490192345
+    angle_max_rad: 2.356194490192345
+    range_min_m: 0.1
+    range_max_m: 30.0
+target:
+  target_id: target_01
+  frame: target_link
+  parent_frame: roadheader_base_link
+  type: LIDAR_TARGET
+  xyz_m:
+  - 0.0
+  - -5.9
+  - 0.585
+  rpy_rad:
+  - 0.0
+  - 0.0
+  - 0.0
+anchors: []
+assets: []
+route: demo_route.yaml
+layout:
+  tile_model: subt_tunnel_tile_5
+  tile_centers_y_m:
+  - 10
+  - 30
+  - 50
+  - 70
+  nominal_length_m: 80
+  geometry_source: Original SubT meshes, not rectangular collision proxies
+  ground_support_z_m: 0.134
+  ground_support_note: Conservative top of tile ground mesh (max 0.133643m); static
+    kinematic support convention, not terrain following
+sources:
+  roadheader: https://sanyglobal-img.sany.com.cn/product/picture_album/20220517/EBZ200H-164955.pdf
+  lidar: https://www.hokuyo-aut.jp/search/single.php?serial=169
+  subt: src/coal_face_sim/scenarios/coal_face_v1/asset_manifest.json

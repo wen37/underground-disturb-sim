@@ -1,0 +1,12 @@
+{
+  "experiment_id": "fixed_distance_001",
+  "data_source": "MOCK_ONLY",
+  "truth_range_m": 10.0,
+  "raw_range_m": 10.0,
+  "dust_concentration": 10.0,
+  "dust_concentration_unit": "mg/m3",
+  "sample_count": 100,
+  "sample_interval_s": 0.1,
+  "seed": 42,
+  "note": "Synthetic interface test; concentration is not calibrated."
+}
