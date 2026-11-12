@@ -42,4 +42,12 @@ target_link_libraries(coal_face_trajectory ${GAZEBO_LIBRARIES})
 ament_target_dependencies(coal_face_trajectory gazebo_ros rclcpp nav_msgs)
 install(TARGETS coal_face_trajectory LIBRARY DESTINATION lib)
 
+find_package(std_msgs REQUIRED)
+add_library(coal_heading_trajectory SHARED src/coal_heading_trajectory.cpp)
+target_compile_features(coal_heading_trajectory PUBLIC cxx_std_17)
+target_include_directories(coal_heading_trajectory PRIVATE ${GAZEBO_INCLUDE_DIRS})
+target_link_libraries(coal_heading_trajectory ${GAZEBO_LIBRARIES})
+ament_target_dependencies(coal_heading_trajectory gazebo_ros rclcpp std_msgs)
+install(TARGETS coal_heading_trajectory LIBRARY DESTINATION lib)
+
 ament_package()
