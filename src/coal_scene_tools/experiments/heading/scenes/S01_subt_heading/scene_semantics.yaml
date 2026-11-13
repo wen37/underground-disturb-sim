@@ -1,0 +1,77 @@
+# Concentrations are explicitly prescribed test values, not validated site measurements.
+schema_version: heading-runtime-1
+scene_id: S01_subt_heading
+scene_version: 1.0.0
+geometry:
+- geometry_id: tunnel_0
+  geometry_type: MESH
+  model_uri: model://subt_tunnel_tile_5
+  xyz_m:
+  - 0
+  - 10
+  - 0
+- geometry_id: tunnel_1
+  geometry_type: MESH
+  model_uri: model://subt_tunnel_tile_5
+  xyz_m:
+  - 0
+  - 30
+  - 0
+- geometry_id: tunnel_2
+  geometry_type: MESH
+  model_uri: model://subt_tunnel_tile_5
+  xyz_m:
+  - 0
+  - 50
+  - 0
+- geometry_id: tunnel_3
+  geometry_type: MESH
+  model_uri: model://subt_tunnel_tile_5
+  xyz_m:
+  - 0
+  - 70
+  - 0
+dust_kind: respirable
+concentration_unit: mg/m3
+concentration_basis: USER_DEFINED_TEST_SCENARIO_NOT_FIELD_CALIBRATED
+background_concentration_mg_m3: 0.0
+zones:
+- zone_id: rear_low
+  polygon_xy_m:
+  - - -3.1
+    - 0
+  - - 3.1
+    - 0
+  - - 3.1
+    - 55
+  - - -3.1
+    - 55
+  z_min_m: 0
+  z_max_m: 4.7
+  respirable_concentration_mg_m3: 2
+- zone_id: driver_medium
+  polygon_xy_m:
+  - - -3.1
+    - 55
+  - - 3.1
+    - 55
+  - - 3.1
+    - 70
+  - - -3.1
+    - 70
+  z_min_m: 0
+  z_max_m: 4.7
+  respirable_concentration_mg_m3: 10
+- zone_id: face_high
+  polygon_xy_m:
+  - - -3.1
+    - 70
+  - - 3.1
+    - 70
+  - - 3.1
+    - 80
+  - - -3.1
+    - 80
+  z_min_m: 0
+  z_max_m: 4.7
+  respirable_concentration_mg_m3: 20

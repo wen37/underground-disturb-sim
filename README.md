@@ -24,6 +24,7 @@
 | UWB | [UWB 模块上手与交付](docs/UWB_QUICKSTART.md) |
 | LiDAR | [LiDAR 模块上手说明](docs/LIDAR_QUICKSTART.md) |
 | 场景 | [场景模块上手与交付](docs/SCENE_QUICKSTART.md) |
+| 掘进场景实验 | [SubT固定测站与Mock联调](docs/HEADING_QUICKSTART.md) |
 
 首次上手命令已进行独立环境验证：[验收方法与结果](docs/ONBOARDING_VALIDATION.md)。
 

@@ -1,0 +1,230 @@
+<sdf version="1.6">
+  <world name="S01_subt_heading">
+    <physics name="default" type="ode">
+      <max_step_size>.001</max_step_size>
+      <real_time_update_rate>500</real_time_update_rate>
+      <real_time_factor>0.5</real_time_factor>
+    </physics>
+    <model name="robot_01">
+      <plugin name="heading_trajectory" filename="libcoal_heading_trajectory.so"><speed_m_s>0.2</speed_m_s><travel_start_s>2</travel_start_s><travel_end_s>12</travel_end_s></plugin>
+      <static>true</static>
+      <pose>0 68 1.349 0 0 0</pose>
+      <link name="roadheader_base_link">
+        <collision name="ebz200h_envelope_collision">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>3.2 11.6 2.43</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="ebz200h_envelope_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>3.2 11.6 2.43</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.85 0.55 0.05 1</ambient>
+            <diffuse>0.85 0.55 0.05 1</diffuse>
+          </material>
+        </visual>
+        <collision name="target_bracket_collision">
+          <pose>0 -5.845 0.585 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.08 0.09 0.08</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="target_bracket_visual">
+          <pose>0 -5.845 0.585 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.08 0.09 0.08</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.25 0.25 0.25 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="target_link">
+        <pose>0 -5.9 0.585 0 0 0</pose>
+        <collision name="target_plate_collision">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.02 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="target_plate_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.02 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.95 0.95 0.95 1</ambient>
+            <diffuse>0.95 0.95 0.95 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="target_mount" type="fixed">
+        <parent>roadheader_base_link</parent>
+        <child>target_link</child>
+      </joint>
+      <plugin name="heading_body_truth" filename="libgazebo_ros_p3d.so">
+        <ros>
+          <namespace>/heading</namespace>
+          <remapping>odom:=body_odometry</remapping>
+        </ros>
+        <body_name>roadheader_base_link</body_name>
+        <frame_name>world</frame_name>
+        <update_rate>100</update_rate>
+        <gaussian_noise>0</gaussian_noise>
+      </plugin>
+    </model>
+    <model name="station_01">
+      <static>true</static>
+      <pose>0 57.1 0.134 0 0 0</pose>
+      <link name="station_link">
+        <collision name="station_foot_collision">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.08</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="station_foot_visual">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.08</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.25 1</ambient>
+            <diffuse>0.2 0.2 0.25 1</diffuse>
+          </material>
+        </visual>
+        <collision name="station_post_collision">
+          <pose>0 0 0.89 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 1.62</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="station_post_visual">
+          <pose>0 0 0.89 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 1.62</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.4 0.45 1</ambient>
+            <diffuse>0.4 0.4 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="lidar_link">
+        <pose>0 0 1.8 0 0 1.570796326794897</pose>
+        <collision name="lidar_housing_collision">
+          <pose>0 0 -0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.08 0.08 0.08</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="lidar_housing_visual">
+          <pose>0 0 -0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.08 0.08 0.08</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.3 0.8 1</ambient>
+            <diffuse>0.1 0.3 0.8 1</diffuse>
+          </material>
+        </visual>
+        <sensor name="lidar_01" type="ray">
+          <always_on>true</always_on>
+          <update_rate>40</update_rate>
+          <visualize>true</visualize>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1081</samples>
+                <resolution>1</resolution>
+                <min_angle>-2.356194490192345</min_angle>
+                <max_angle>2.356194490192345</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>30.0</max>
+              <resolution>0.001</resolution>
+            </range>
+          </ray>
+          <plugin name="heading_lidar_ros" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <namespace>/heading</namespace>
+              <remapping>~/out:=scan_raw</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>lidar_link</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+      <joint name="lidar_mount" type="fixed">
+        <parent>station_link</parent>
+        <child>lidar_link</child>
+      </joint>
+    </model>
+    <include>
+      <uri>model://subt_tunnel_tile_5</uri>
+      <name>tunnel_0</name>
+      <pose>0 10 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://subt_tunnel_tile_5</uri>
+      <name>tunnel_1</name>
+      <pose>0 30 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://subt_tunnel_tile_5</uri>
+      <name>tunnel_2</name>
+      <pose>0 50 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://subt_tunnel_tile_5</uri>
+      <name>tunnel_3</name>
+      <pose>0 70 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://subt_tunnel_tile_blocker</uri>
+      <name>heading_blocker</name>
+      <pose>0 83.77390228 0 0 0 0</pose>
+    </include>
+    <plugin name="heading_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/heading</namespace>
+      </ros>
+      <update_rate>100.0</update_rate>
+    </plugin>
+    <light name="heading_light" type="directional">
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <direction>0.1 0.1 -1</direction>
+    </light>
+  </world>
+</sdf>

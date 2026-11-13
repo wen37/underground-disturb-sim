@@ -1,0 +1,23 @@
+scene_version: 1.0.0
+schema_version: heading-runtime-1
+scene_id: S01_subt_heading
+robot_id: robot_01
+time_unit: s
+position_unit: m
+speed_m_s: 0.2
+segments:
+- start_s: 0
+  end_s: 2
+  work_mode: IDLE
+  start_y_m: 68
+  end_y_m: 68
+- start_s: 2
+  end_s: 12
+  work_mode: TRAVEL
+  start_y_m: 68
+  end_y_m: 70
+- start_s: 12
+  end_s: 15
+  work_mode: CUTTING_SIMULATED
+  start_y_m: 70
+  end_y_m: 70
