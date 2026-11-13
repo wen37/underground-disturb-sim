@@ -5,8 +5,8 @@ from pathlib import Path
 import xml.etree.ElementTree as E
 import yaml,sys
 from heading_math import validate_zones
-from paths import ROOT, MODELS, FIXED
-sys.path.insert(0,str(ROOT.parents[1]/'tools'))
+from paths import ROOT, MODELS, FIXED, VALIDATOR_TOOLS
+sys.path.insert(0,str(VALIDATOR_TOOLS))
 from validate_scene import UniqueLoader,finite
 def read_yaml(path):
  data=yaml.load(path.read_text(),Loader=UniqueLoader);finite(data);return data

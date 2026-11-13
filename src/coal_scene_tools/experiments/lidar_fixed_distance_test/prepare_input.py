@@ -1,4 +1,4 @@
-# 固定距离测试实验脚本，输出结果为fixed_case.json
+# 固定距离测试实验脚本
 import json
 import math
 from pathlib import Path
@@ -48,4 +48,3 @@ print(
 )
 print(f"计划采样次数：{case['sample_count']}")
 print(f"输入文件：{output}")
-print("尚未调用粉尘算法，也未生成受扰测距。")
