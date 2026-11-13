@@ -80,3 +80,23 @@ map为右手系，+Y前进、X横向、+Z向上。map→world恒等；map→stat
 - Gazebo Classic沿用现有环境。有限网格净空检查与运行通过不等于真实矿用设备适用性认证。
 
 验收记录见[HEADING_VALIDATION.md](HEADING_VALIDATION.md)。未来替换Mock时保持接口与单位，明确新模型版本，并经审核更新保留校验清单；不要通过删除校验绕过有意的模型变更。
+
+## 使用已有的cave_eval_ws本地目录
+
+在仓库根目录完成资源恢复后执行：
+
+```bash
+python3 scripts/deploy_heading_workspace.py --workspace ~/cave_eval_ws
+python3 scripts/deploy_heading_workspace.py --workspace ~/cave_eval_ws --check
+cd ~/cave_eval_ws/src/coal_heading_scene
+source /opt/ros/humble/setup.bash
+python3 runtime/build_native.py
+python3 runtime/scene_validator.py
+python3 runtime/run_experiment.py --mode both --gui
+```
+
+部署复制相同源码，不建立软链接。运行代码、S01、固定距离模块、共享校验器和原生插件源/资产按字节核对；results、evidence、历史S00不与GitHub同步。support/COLCON_IGNORE防止普通工作空间构建误扫描部署内部的辅助包，build_native.py显式指定该包构建。
+
+被替换文件先备份到本地场景backups/workspace_sync_时间目录。旧模板三份说明、过时CONFIGURATION.md及不再发布的旧runtime脚本从活动位置移出，来源清单和THIRD_PARTY.md保留。deployment.json记录部署版本与哈希，不作为算法配置。
+
+本地独立运行时实际导入~/cave_eval_ws/lidar_fixed_distance_test/dust_model.py。以后若先修改本地代码，需先将改动审核同步回仓库再部署；部署命令不是自动双向同步工具。
