@@ -1,0 +1,1 @@
+﻿table_schema_version,stamp_sec,stamp_nanosec,frame_id,schema_version,experiment_id,run_id,scene_id,scene_version,robot_id,sequence,observation_id,request_id,reflector_index,geometry_id,geometry_type,closest_point_m_x,closest_point_m_y,closest_point_m_z,distance_to_link_m,normal_x,normal_y,normal_z,material,reflection_level,is_dynamic

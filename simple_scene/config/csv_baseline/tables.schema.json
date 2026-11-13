@@ -1,0 +1,2154 @@
+{
+  "table_schema_version": "0.1.0",
+  "message_schema_version": "0.1.1",
+  "status": "A0_CANDIDATE_REQUIRES_BC_COLUMN_CONFIRMATION",
+  "scope": "headers_and_mapping_only_not_exporters",
+  "tables": {
+    "Run_Info": {
+      "owner": "A",
+      "grain": "one_per_run",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_end_stamp_sec",
+          "type": "int32",
+          "source": "derived.run_end_stamp_sec",
+          "description": "结束仿真时刻秒部分",
+          "unit": "s",
+          "nullable": true
+        },
+        {
+          "column": "run_end_stamp_nanosec",
+          "type": "uint32",
+          "source": "derived.run_end_stamp_nanosec",
+          "description": "结束仿真时刻纳秒部分",
+          "unit": "ns",
+          "nullable": true
+        },
+        {
+          "column": "seed",
+          "type": "uint64",
+          "source": "derived.seed",
+          "description": "实验种子；未配置为空，不伪造0",
+          "unit": "1",
+          "nullable": true
+        },
+        {
+          "column": "run_status",
+          "type": "string",
+          "source": "derived.run_status",
+          "description": "RUNNING/COMPLETED/FAILED/INTERRUPTED",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "a_commit",
+          "type": "string",
+          "source": "derived.a_commit",
+          "description": "A源码版本或UNAVAILABLE",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "b_commit",
+          "type": "string",
+          "source": "derived.b_commit",
+          "description": "B源码版本或UNAVAILABLE",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "c_commit",
+          "type": "string",
+          "source": "derived.c_commit",
+          "description": "C源码版本或UNAVAILABLE",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "d_commit",
+          "type": "string",
+          "source": "derived.d_commit",
+          "description": "D源码版本或UNAVAILABLE",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "config_sha256",
+          "type": "string",
+          "source": "derived.config_sha256",
+          "description": "配置快照清单哈希；无配置快照则为空",
+          "unit": "1",
+          "nullable": true
+        }
+      ]
+    },
+    "Robot_State": {
+      "owner": "A",
+      "grain": "one_per_robot_state",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "work_mode",
+          "type": "string",
+          "source": "work_mode",
+          "description": "IDLE/TRAVELLING/CUTTING/UNKNOWN",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "zone_id",
+          "type": "string",
+          "source": "zone_id",
+          "description": "当前区域；无区时NONE，按priority最大规则唯一选区",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "is_moving",
+          "type": "bool",
+          "source": "is_moving",
+          "description": "实测线速度模长>0.001 m/s",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "commanded_linear_speed_mps",
+          "type": "float64",
+          "source": "commanded_linear_speed_mps",
+          "description": "控制目标有符号机体前向速度m/s；非前向轨迹见下项",
+          "unit": "m/s",
+          "nullable": false
+        },
+        {
+          "column": "commanded_velocity_map_mps_x",
+          "type": "float64",
+          "source": "commanded_velocity_map_mps.x",
+          "description": "map目标速度向量，m/s；采煤机沿Y运动用此项",
+          "unit": "m/s",
+          "nullable": false
+        },
+        {
+          "column": "commanded_velocity_map_mps_y",
+          "type": "float64",
+          "source": "commanded_velocity_map_mps.y",
+          "description": "map目标速度向量，m/s；采煤机沿Y运动用此项",
+          "unit": "m/s",
+          "nullable": false
+        },
+        {
+          "column": "commanded_velocity_map_mps_z",
+          "type": "float64",
+          "source": "commanded_velocity_map_mps.z",
+          "description": "map目标速度向量，m/s；采煤机沿Y运动用此项",
+          "unit": "m/s",
+          "nullable": false
+        },
+        {
+          "column": "commanded_yaw_rate_radps",
+          "type": "float64",
+          "source": "commanded_yaw_rate_radps",
+          "description": "绕map Z的目标角速度rad/s",
+          "unit": "rad/s",
+          "nullable": false
+        }
+      ]
+    },
+    "Raw_Summary": {
+      "owner": "A",
+      "grain": "one_per_raw_observation_or_scan_frame",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "derived.observation_id",
+          "description": "原观测ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stream",
+          "type": "string",
+          "source": "derived.stream",
+          "description": "uwb/lidar",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sensor_id",
+          "type": "string",
+          "source": "derived.sensor_id",
+          "description": "激光sensor_id或UWB tag_id",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "anchor_id",
+          "type": "string",
+          "source": "derived.anchor_id",
+          "description": "UWB锚点；激光留空",
+          "unit": "1",
+          "nullable": true
+        },
+        {
+          "column": "element_count",
+          "type": "uint32",
+          "source": "derived.element_count",
+          "description": "UWB为1，LiDAR为束数",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "valid_count",
+          "type": "uint32",
+          "source": "derived.valid_count",
+          "description": "raw有效元素数",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "invalid_count",
+          "type": "uint32",
+          "source": "derived.invalid_count",
+          "description": "raw无效元素数",
+          "unit": "1",
+          "nullable": false
+        }
+      ]
+    },
+    "UWB_Observations": {
+      "owner": "B",
+      "grain": "one_per_uwb_observation",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "observation_id",
+          "description": "原raw观测ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "decision_id",
+          "type": "string",
+          "source": "decision_id",
+          "description": "对应Decision ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "tag_id",
+          "type": "string",
+          "source": "tag_id",
+          "description": "原标签ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "anchor_id",
+          "type": "string",
+          "source": "anchor_id",
+          "description": "原锚点ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "tag_position_m_x",
+          "type": "float64",
+          "source": "tag_position_m.x",
+          "description": "原raw位置，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "tag_position_m_y",
+          "type": "float64",
+          "source": "tag_position_m.y",
+          "description": "原raw位置，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "tag_position_m_z",
+          "type": "float64",
+          "source": "tag_position_m.z",
+          "description": "原raw位置，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "anchor_position_m_x",
+          "type": "float64",
+          "source": "anchor_position_m.x",
+          "description": "原raw位置，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "anchor_position_m_y",
+          "type": "float64",
+          "source": "anchor_position_m.y",
+          "description": "原raw位置，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "anchor_position_m_z",
+          "type": "float64",
+          "source": "anchor_position_m.z",
+          "description": "原raw位置，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "truth_range_m",
+          "type": "float64",
+          "source": "truth_range_m",
+          "description": "原真值m",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "raw_range_m",
+          "type": "float64",
+          "source": "raw_range_m",
+          "description": "原raw m",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "observed_range_m",
+          "type": "float64",
+          "source": "observed_range_m",
+          "description": "注入后m；无效NaN",
+          "unit": "m",
+          "nullable": true
+        },
+        {
+          "column": "error_m",
+          "type": "float64",
+          "source": "error_m",
+          "description": "observed-truth；无效NaN",
+          "unit": "m",
+          "nullable": true
+        },
+        {
+          "column": "state",
+          "type": "string",
+          "source": "state",
+          "description": "与对应decision propagation_state一致",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "valid",
+          "type": "bool",
+          "source": "valid",
+          "description": "有效观测才true",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "params_version",
+          "type": "string",
+          "source": "params_version",
+          "description": "B配置版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "seed",
+          "type": "uint64",
+          "source": "seed",
+          "description": "本run配置种子；逐观测随机流由ID确定",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "query_status",
+          "type": "string",
+          "source": "query_status",
+          "description": "OK/INVALID_REQUEST/SCENE_MISMATCH/VERSION_MISMATCH/TIME_UNAVAILABLE/UNSUPPORTED/INTERNAL_ERROR/NOT_CALLED",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "propagation_state",
+          "type": "string",
+          "source": "propagation_state",
+          "description": "LOS/NLOS/OUTAGE/INPUT_INVALID/UNKNOWN",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "cause",
+          "type": "string",
+          "source": "cause",
+          "description": "可读原因；不依赖其文本做状态解析",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "trigger_mask",
+          "type": "uint32",
+          "source": "trigger_mask",
+          "description": "bit0 raw_invalid bit1 out_of_range bit2 direct_blocked bit3 multipath_active bit4 query_failed",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "multipath_active",
+          "type": "bool",
+          "source": "multipath_active",
+          "description": "多径分量实际启用",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "nlos_active",
+          "type": "bool",
+          "source": "nlos_active",
+          "description": "NLOS分量实际启用",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "outage_active",
+          "type": "bool",
+          "source": "outage_active",
+          "description": "无有效观测",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "blocking_count",
+          "type": "uint32",
+          "source": "blocking_count",
+          "description": "查询直达阻挡体数量",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "reflector_count",
+          "type": "uint32",
+          "source": "reflector_count",
+          "description": "几何反射候选数量",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "multipath_error_m",
+          "type": "float64",
+          "source": "multipath_error_m",
+          "description": "本次叠加多径误差m；未启用为0",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "nlos_error_m",
+          "type": "float64",
+          "source": "nlos_error_m",
+          "description": "本次叠加NLOS误差m；未启用为0",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "random_noise_m",
+          "type": "float64",
+          "source": "random_noise_m",
+          "description": "本次随机噪声m；未启用为0",
+          "unit": "m",
+          "nullable": false
+        }
+      ]
+    },
+    "State_Transitions": {
+      "owner": "B",
+      "grain": "one_per_actual_uwb_state_transition",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "derived.observation_id",
+          "description": "触发变化的raw ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "decision_id",
+          "type": "string",
+          "source": "derived.decision_id",
+          "description": "对应判定ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "tag_id",
+          "type": "string",
+          "source": "derived.tag_id",
+          "description": "标签ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "anchor_id",
+          "type": "string",
+          "source": "derived.anchor_id",
+          "description": "锚点ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "previous_state",
+          "type": "string",
+          "source": "derived.previous_state",
+          "description": "前一传播状态；初始为UNKNOWN",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "current_state",
+          "type": "string",
+          "source": "derived.current_state",
+          "description": "当前传播状态",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "cause",
+          "type": "string",
+          "source": "derived.cause",
+          "description": "B判定原因",
+          "unit": "1",
+          "nullable": false
+        }
+      ]
+    },
+    "Query_Trace": {
+      "owner": "B",
+      "grain": "one_per_query_request_or_explicit_not_called",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "derived.observation_id",
+          "description": "对应raw ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "request_id",
+          "type": "string",
+          "source": "derived.request_id",
+          "description": "请求ID；未调用留空",
+          "unit": "1",
+          "nullable": true
+        },
+        {
+          "column": "query_status",
+          "type": "string",
+          "source": "derived.query_status",
+          "description": "QueryRay.status；未调用为NOT_CALLED",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "served_scene_version",
+          "type": "string",
+          "source": "derived.served_scene_version",
+          "description": "响应实际场景版本；未调用留空",
+          "unit": "1",
+          "nullable": true
+        },
+        {
+          "column": "intersection_count",
+          "type": "uint32",
+          "source": "derived.intersection_count",
+          "description": "响应相交项数；未调用为空",
+          "unit": "1",
+          "nullable": true
+        },
+        {
+          "column": "reflector_count",
+          "type": "uint32",
+          "source": "derived.reflector_count",
+          "description": "响应反射候选项数；未调用为空",
+          "unit": "1",
+          "nullable": true
+        },
+        {
+          "column": "processing_time_ms",
+          "type": "float64",
+          "source": "derived.processing_time_ms",
+          "description": "服务内部单调墙钟耗时，不用于采样对齐",
+          "unit": "ms",
+          "nullable": true
+        },
+        {
+          "column": "error_message",
+          "type": "string",
+          "source": "derived.error_message",
+          "description": "原响应说明或未调用原因",
+          "unit": "1",
+          "nullable": true
+        }
+      ]
+    },
+    "Query_Intersections": {
+      "owner": "B",
+      "grain": "one_per_query_intersection_in_response_order",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "derived.observation_id",
+          "description": "对应raw ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "request_id",
+          "type": "string",
+          "source": "derived.request_id",
+          "description": "原查询请求ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "intersection_index",
+          "type": "uint32",
+          "source": "derived.intersection_index",
+          "description": "响应数组0基下标；空数组不写明细行",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "geometry_id",
+          "type": "string",
+          "source": "direct_intersections[index].geometry_id",
+          "description": "场景语义几何ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "geometry_type",
+          "type": "string",
+          "source": "direct_intersections[index].geometry_type",
+          "description": "BOX/MESH",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "entry_point_m_x",
+          "type": "float64",
+          "source": "direct_intersections[index].entry_point_m.x",
+          "description": "map，射线段进入点",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "entry_point_m_y",
+          "type": "float64",
+          "source": "direct_intersections[index].entry_point_m.y",
+          "description": "map，射线段进入点",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "entry_point_m_z",
+          "type": "float64",
+          "source": "direct_intersections[index].entry_point_m.z",
+          "description": "map，射线段进入点",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "exit_point_m_x",
+          "type": "float64",
+          "source": "direct_intersections[index].exit_point_m.x",
+          "description": "map，射线段离开点",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "exit_point_m_y",
+          "type": "float64",
+          "source": "direct_intersections[index].exit_point_m.y",
+          "description": "map，射线段离开点",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "exit_point_m_z",
+          "type": "float64",
+          "source": "direct_intersections[index].exit_point_m.z",
+          "description": "map，射线段离开点",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "distance_from_origin_m",
+          "type": "float64",
+          "source": "direct_intersections[index].distance_from_origin_m",
+          "description": "沿有限线段到进入点的距离m",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "entry_normal_x",
+          "type": "float64",
+          "source": "direct_intersections[index].entry_normal.x",
+          "description": "map单位外法向；退化接触返回零并在查询status说明",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "entry_normal_y",
+          "type": "float64",
+          "source": "direct_intersections[index].entry_normal.y",
+          "description": "map单位外法向；退化接触返回零并在查询status说明",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "entry_normal_z",
+          "type": "float64",
+          "source": "direct_intersections[index].entry_normal.z",
+          "description": "map单位外法向；退化接触返回零并在查询status说明",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "material",
+          "type": "string",
+          "source": "direct_intersections[index].material",
+          "description": "材料名称，UNKNOWN可用",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "thickness_m",
+          "type": "float64",
+          "source": "direct_intersections[index].thickness_m",
+          "description": "语义标称厚度m；未知NaN",
+          "unit": "m",
+          "nullable": true
+        },
+        {
+          "column": "path_length_m",
+          "type": "float64",
+          "source": "direct_intersections[index].path_length_m",
+          "description": "线段在此体内的实际长度m，不等于标称厚度",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "reflection_level",
+          "type": "string",
+          "source": "direct_intersections[index].reflection_level",
+          "description": "LOW/MEDIUM/HIGH/UNKNOWN，定性事实而非误差参数",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "is_dynamic",
+          "type": "bool",
+          "source": "direct_intersections[index].is_dynamic",
+          "description": "动态几何标记",
+          "unit": "1",
+          "nullable": false
+        }
+      ]
+    },
+    "Query_Reflectors": {
+      "owner": "B",
+      "grain": "one_per_query_reflector_in_response_order",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "derived.observation_id",
+          "description": "对应raw ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "request_id",
+          "type": "string",
+          "source": "derived.request_id",
+          "description": "原查询请求ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "reflector_index",
+          "type": "uint32",
+          "source": "derived.reflector_index",
+          "description": "响应数组0基下标；空数组不写明细行",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "geometry_id",
+          "type": "string",
+          "source": "reflector_candidates[index].geometry_id",
+          "description": "候选几何ID，不表示反射路径成立",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "geometry_type",
+          "type": "string",
+          "source": "reflector_candidates[index].geometry_type",
+          "description": "BOX/MESH",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "closest_point_m_x",
+          "type": "float64",
+          "source": "reflector_candidates[index].closest_point_m.x",
+          "description": "几何表面上距请求线段最近点，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "closest_point_m_y",
+          "type": "float64",
+          "source": "reflector_candidates[index].closest_point_m.y",
+          "description": "几何表面上距请求线段最近点，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "closest_point_m_z",
+          "type": "float64",
+          "source": "reflector_candidates[index].closest_point_m.z",
+          "description": "几何表面上距请求线段最近点，map",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "distance_to_link_m",
+          "type": "float64",
+          "source": "reflector_candidates[index].distance_to_link_m",
+          "description": "最近点到有限线段的距离m",
+          "unit": "m",
+          "nullable": false
+        },
+        {
+          "column": "normal_x",
+          "type": "float64",
+          "source": "reflector_candidates[index].normal.x",
+          "description": "最近表面单位法向，map",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "normal_y",
+          "type": "float64",
+          "source": "reflector_candidates[index].normal.y",
+          "description": "最近表面单位法向，map",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "normal_z",
+          "type": "float64",
+          "source": "reflector_candidates[index].normal.z",
+          "description": "最近表面单位法向，map",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "material",
+          "type": "string",
+          "source": "reflector_candidates[index].material",
+          "description": "材料",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "reflection_level",
+          "type": "string",
+          "source": "reflector_candidates[index].reflection_level",
+          "description": "LOW/MEDIUM/HIGH/UNKNOWN",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "is_dynamic",
+          "type": "bool",
+          "source": "reflector_candidates[index].is_dynamic",
+          "description": "动态标记",
+          "unit": "1",
+          "nullable": false
+        }
+      ]
+    },
+    "Lidar_Frame_Summary": {
+      "owner": "C",
+      "grain": "one_per_lidar_frame",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "observation_id",
+          "description": "原帧ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "decision_id",
+          "type": "string",
+          "source": "decision_id",
+          "description": "run内唯一",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "params_version",
+          "type": "string",
+          "source": "params_version",
+          "description": "C配置版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "seed",
+          "type": "uint64",
+          "source": "seed",
+          "description": "run种子",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "work_mode",
+          "type": "string",
+          "source": "work_mode",
+          "description": "消费的RobotState工况",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "zone_id",
+          "type": "string",
+          "source": "zone_id",
+          "description": "消费的RobotState区域",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "target_concentration_mg_m3",
+          "type": "float64",
+          "source": "target_concentration_mg_m3",
+          "description": "mg/m^3",
+          "unit": "mg/m3",
+          "nullable": false
+        },
+        {
+          "column": "actual_concentration_mg_m3",
+          "type": "float64",
+          "source": "actual_concentration_mg_m3",
+          "description": "mg/m^3",
+          "unit": "mg/m3",
+          "nullable": false
+        },
+        {
+          "column": "dust_active",
+          "type": "bool",
+          "source": "dust_active",
+          "description": "C状态机输出",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "cause",
+          "type": "string",
+          "source": "cause",
+          "description": "可读原因",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "normal_count",
+          "type": "uint32",
+          "source": "normal_count",
+          "description": "状态0数量",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "disturbed_count",
+          "type": "uint32",
+          "source": "disturbed_count",
+          "description": "状态1数量",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "dropout_count",
+          "type": "uint32",
+          "source": "dropout_count",
+          "description": "状态2数量",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "false_return_count",
+          "type": "uint32",
+          "source": "false_return_count",
+          "description": "状态3数量",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "no_return_count",
+          "type": "uint32",
+          "source": "no_return_count",
+          "description": "状态4数量",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "invalid_count",
+          "type": "uint32",
+          "source": "invalid_count",
+          "description": "状态5数量；六项总和等于N",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "valid",
+          "type": "bool",
+          "source": "valid",
+          "description": "判定是否可用",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sensor_id",
+          "type": "string",
+          "source": "derived.sensor_id",
+          "description": "原扫描传感器ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "beam_count",
+          "type": "uint32",
+          "source": "derived.beam_count",
+          "description": "原扫描束数",
+          "unit": "1",
+          "nullable": false
+        }
+      ]
+    },
+    "Lidar_Beam_Detail": {
+      "owner": "C",
+      "grain": "one_per_lidar_beam",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "derived.observation_id",
+          "description": "原扫描帧ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "decision_id",
+          "type": "string",
+          "source": "derived.decision_id",
+          "description": "对应C判定ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sensor_id",
+          "type": "string",
+          "source": "derived.sensor_id",
+          "description": "原扫描传感器ID",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "beam_index",
+          "type": "uint32",
+          "source": "derived.beam_index",
+          "description": "0基束下标",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "angle_rad",
+          "type": "float32",
+          "source": "derived.angle_rad",
+          "description": "angle_min_rad+index*angle_increment_rad",
+          "unit": "rad",
+          "nullable": false
+        },
+        {
+          "column": "truth_range_m",
+          "type": "float32",
+          "source": "derived.truth_range_m",
+          "description": "truth_ranges_m[index]",
+          "unit": "m",
+          "nullable": true
+        },
+        {
+          "column": "raw_range_m",
+          "type": "float32",
+          "source": "derived.raw_range_m",
+          "description": "raw_ranges_m[index]",
+          "unit": "m",
+          "nullable": true
+        },
+        {
+          "column": "observed_range_m",
+          "type": "float32",
+          "source": "derived.observed_range_m",
+          "description": "observed_ranges_m[index]",
+          "unit": "m",
+          "nullable": true
+        },
+        {
+          "column": "beam_state",
+          "type": "uint8",
+          "source": "derived.beam_state",
+          "description": "beam_states[index]，0..5",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "delta_range_m",
+          "type": "float32",
+          "source": "derived.delta_range_m",
+          "description": "observed-raw；任一非有限则NaN",
+          "unit": "m",
+          "nullable": true
+        },
+        {
+          "column": "observed_valid",
+          "type": "bool",
+          "source": "derived.observed_valid",
+          "description": "observed_valid[index]",
+          "unit": "1",
+          "nullable": false
+        }
+      ]
+    },
+    "Anomalies": {
+      "owner": "A",
+      "grain": "one_per_detected_anomaly",
+      "columns": [
+        {
+          "column": "table_schema_version",
+          "type": "string",
+          "source": "constant:0.1.0",
+          "description": "本CSV格式版本",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "stamp_sec",
+          "type": "int32",
+          "source": "context.header.stamp.sec",
+          "description": "原观测采样仿真时刻秒部分",
+          "unit": "s",
+          "nullable": false
+        },
+        {
+          "column": "stamp_nanosec",
+          "type": "uint32",
+          "source": "context.header.stamp.nanosec",
+          "description": "纳秒部分；与秒组合为采样时刻",
+          "unit": "ns",
+          "nullable": false
+        },
+        {
+          "column": "frame_id",
+          "type": "string",
+          "source": "context.header.frame_id",
+          "description": "原消息坐标系",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "schema_version",
+          "type": "string",
+          "source": "context.schema_version",
+          "description": "协议语义版本，本包 0.1.1",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "experiment_id",
+          "type": "string",
+          "source": "context.experiment_id",
+          "description": "实验配置标识，非空",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "run_id",
+          "type": "string",
+          "source": "context.run_id",
+          "description": "每次运行唯一；时钟重置必须换新值",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_id",
+          "type": "string",
+          "source": "context.scene_id",
+          "description": "场景包标识，大小写敏感",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "scene_version",
+          "type": "string",
+          "source": "context.scene_version",
+          "description": "场景内容版本，SemVer",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "robot_id",
+          "type": "string",
+          "source": "context.robot_id",
+          "description": "机器人标识；查询场景级请求也填写发起机器人",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "sequence",
+          "type": "uint64",
+          "source": "context.sequence",
+          "description": "每生产者每数据流每run递增，从0开始",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "observation_id",
+          "type": "string",
+          "source": "derived.observation_id",
+          "description": "可关联时填写；否则为空",
+          "unit": "1",
+          "nullable": true
+        },
+        {
+          "column": "component",
+          "type": "string",
+          "source": "derived.component",
+          "description": "A/B/C/D或具体节点",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "code",
+          "type": "string",
+          "source": "derived.code",
+          "description": "稳定机器可读错误码",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "severity",
+          "type": "string",
+          "source": "derived.severity",
+          "description": "INFO/WARNING/ERROR",
+          "unit": "1",
+          "nullable": false
+        },
+        {
+          "column": "message",
+          "type": "string",
+          "source": "derived.message",
+          "description": "异常详情",
+          "unit": "1",
+          "nullable": false
+        }
+      ]
+    }
+  }
+}

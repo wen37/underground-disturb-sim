@@ -1,0 +1,20 @@
+SubT model dimensions (meters; model-local X/Y/Z)
+These are OUTER axis-aligned bounding boxes, NOT inner clearance.
+
+Model                         Collision X            Y            Z
+subt_tunnel_tile_1                20.0000      20.0000       3.9895
+  collision_ground box XYZ: 20.0000, 20.0000, 0.0010
+subt_tunnel_tile_2                13.8948      14.0636       5.1756
+  collision_ground box XYZ: 13.0000, 13.0000, 0.0010
+subt_tunnel_tile_5                 6.0594      20.0000       3.9895
+  collision_ground box XYZ: 5.0000, 20.0000, 0.0010
+subt_tunnel_tile_blocker           7.5478       7.5478       7.5478
+
+Visual bounding dimensions (includes visual-only scaling):
+subt_tunnel_tile_1: 20.1000, 20.1000, 3.9895
+subt_tunnel_tile_2: 13.9642, 14.1339, 5.1756
+subt_tunnel_tile_5: 6.0897, 20.1000, 3.9895
+subt_tunnel_tile_blocker: 7.5478, 7.5478, 7.5478
+
+JSON contains min/max coordinates, per-part bounds, units and node transforms.
+Length between connection planes and usable cross-section require separate measurements.

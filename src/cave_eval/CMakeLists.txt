@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.8)
+project(cave_eval)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY launch worlds config DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS scripts/shearer_motion.py scripts/shearer_truth_tf.py DESTINATION lib/${PROJECT_NAME})
+ament_package()

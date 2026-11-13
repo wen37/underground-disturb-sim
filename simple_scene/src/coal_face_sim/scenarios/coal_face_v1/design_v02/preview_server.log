@@ -1,0 +1,2 @@
+[INFO] [1793178649.373289798] [design_preview.design_preview_states]: Publishing states of gazebo models at [/design_preview/model_states]
+[INFO] [1793178649.373708935] [design_preview.design_preview_states]: Publishing states of gazebo links at [/design_preview/link_states]

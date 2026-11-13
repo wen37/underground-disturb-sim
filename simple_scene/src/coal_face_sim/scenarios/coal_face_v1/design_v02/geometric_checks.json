@@ -1,0 +1,289 @@
+{
+  "method": "Geometric connection-frame matching and 360-ray port profile comparison at 1 cm inside ends; triangle/AABB separating-axis tests above floor contacts; exact fixed-orientation swept AABB; sampled support roof gap.",
+  "connections": [
+    {
+      "a": "face_00",
+      "a_port": 0,
+      "b": "transport_turn",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.032153827304161e-07,
+      "profile_max_difference_m": 0.00013273159770044174
+    },
+    {
+      "a": "face_00",
+      "a_port": 1,
+      "b": "face_01",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        20.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_01",
+      "a_port": 1,
+      "b": "face_02",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        40.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_02",
+      "a_port": 1,
+      "b": "face_03",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        60.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_03",
+      "a_port": 1,
+      "b": "face_04",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        80.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_04",
+      "a_port": 1,
+      "b": "face_05",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        100.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_05",
+      "a_port": 1,
+      "b": "face_06",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        120.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_06",
+      "a_port": 1,
+      "b": "face_07",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        140.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_07",
+      "a_port": 1,
+      "b": "face_08",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        160.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_08",
+      "a_port": 1,
+      "b": "face_09",
+      "b_port": 0,
+      "position_xyz_m": [
+        0.0,
+        180.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.499069892449086e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "face_09",
+      "a_port": 1,
+      "b": "return_turn",
+      "b_port": 1,
+      "position_xyz_m": [
+        0.0,
+        200.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.98007401764589e-07,
+      "profile_max_difference_m": 0.00016905592678106984
+    },
+    {
+      "a": "transport_00",
+      "a_port": 0,
+      "b": "transport_01",
+      "b_port": 1,
+      "position_xyz_m": [
+        -50.0,
+        -10.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.49906988823024e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "transport_01",
+      "a_port": 0,
+      "b": "transport_02",
+      "b_port": 1,
+      "position_xyz_m": [
+        -30.0,
+        -10.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.49906988823024e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "transport_02",
+      "a_port": 0,
+      "b": "transport_turn",
+      "b_port": 1,
+      "position_xyz_m": [
+        -10.0,
+        -10.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 1.0932277624942089e-06,
+      "profile_max_difference_m": 0.00016905592678106984
+    },
+    {
+      "a": "return_00",
+      "a_port": 0,
+      "b": "return_01",
+      "b_port": 1,
+      "position_xyz_m": [
+        -50.0,
+        210.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.49906988823024e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "return_01",
+      "a_port": 0,
+      "b": "return_02",
+      "b_port": 1,
+      "position_xyz_m": [
+        -30.0,
+        210.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.49906988823024e-07,
+      "profile_max_difference_m": 9.97607715547133e-07
+    },
+    {
+      "a": "return_02",
+      "a_port": 0,
+      "b": "return_turn",
+      "b_port": 0,
+      "position_xyz_m": [
+        -10.0,
+        210.0,
+        0.0
+      ],
+      "profile_valid_rays": 360,
+      "profile_p95_difference_m": 9.032153827304161e-07,
+      "profile_max_difference_m": 0.00013273159770044174
+    }
+  ],
+  "open_ports": [
+    {
+      "instance": "transport_00",
+      "port": 1,
+      "position_xyz_m": [
+        -70.0,
+        -10.0,
+        0.0
+      ]
+    },
+    {
+      "instance": "return_00",
+      "port": 1,
+      "position_xyz_m": [
+        -70.0,
+        210.0,
+        0.0
+      ]
+    }
+  ],
+  "equipment_tunnel_intersections": [],
+  "equipment_box_overlaps": [],
+  "support_top_roof_gap_min_m": 0.1171510217851625,
+  "support_top_roof_gap_samples": 6517,
+  "support_roof_worst_sample_world_xyz_m": [
+    -1.65,
+    2.4833333333333334,
+    2.8006
+  ],
+  "checked_static_boxes": 173,
+  "swept_body_checked": true,
+  "scope_limit": "Not real mine design; no dynamic or floor-bearing test, no UWB/dust models, no rounded equipment shape or mechanical behavior.",
+  "passed": true,
+  "source_sha256": {
+    "subt_tunnel_tile_5/model.sdf": "0c8788dd1d62964bce7944da6a58a3e5cd6ed42d8aef43428097876cd7afb957",
+    "subt_tunnel_tile_5/meshes/tunnel_tile_5.dae": "cceb7742c06596700e41231d600bbd9a53e13d0932a26e9997238132744ba3d5",
+    "subt_tunnel_tile_2/model.sdf": "ec3cea481ce8e049222b00b0350cb0e914eb396d1e4c33755600c863c20e7aae",
+    "subt_tunnel_tile_2/meshes/tunnel_tile_2.dae": "031a9623a186c2213df42e64ebfe61b46f19386191c4b64ea1c113cc651f1a6e"
+  },
+  "checks": {
+    "connections_matched": true,
+    "port_profiles_within_1cm": true,
+    "equipment_clear_of_tunnel_mesh": true,
+    "equipment_boxes_do_not_overlap": true,
+    "support_sampled_roof_gap_over_5cm": true
+  }
+}

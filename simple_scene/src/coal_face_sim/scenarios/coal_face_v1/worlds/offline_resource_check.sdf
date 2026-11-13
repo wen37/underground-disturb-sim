@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.6">
+  <world name="offline_subt_assets">
+    <scene>
+      <ambient>.8 .8 .8 1</ambient>
+      <shadows>false</shadows>
+    </scene>
+    <light name="sun" type="directional">
+      <direction>-.5 .2 -1</direction>
+      <diffuse>.8 .8 .8 1</diffuse>
+    </light>
+    <physics name="ode" type="ode">
+      <max_step_size>.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <include>
+      <uri>model://subt_tunnel_tile_1</uri>
+      <name>subt_tunnel_tile_1</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <model name="probe_subt_tunnel_tile_1">
+      <static>true</static>
+      <pose>3 1 1 0 0 0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>5</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.14159265</min_angle>
+                <max_angle>3.14159265</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.05</min>
+              <max>25</max>
+              <resolution>.01</resolution>
+            </range>
+          </ray>
+          <plugin name="ray_subt_tunnel_tile_1" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/offline/subt_tunnel_tile_1/scan</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>probe_subt_tunnel_tile_1</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <include>
+      <uri>model://subt_tunnel_tile_2</uri>
+      <name>subt_tunnel_tile_2</name>
+      <pose>40 0 0 0 0 0</pose>
+    </include>
+    <model name="probe_subt_tunnel_tile_2">
+      <static>true</static>
+      <pose>43 1 1 0 0 0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>5</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.14159265</min_angle>
+                <max_angle>3.14159265</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.05</min>
+              <max>25</max>
+              <resolution>.01</resolution>
+            </range>
+          </ray>
+          <plugin name="ray_subt_tunnel_tile_2" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/offline/subt_tunnel_tile_2/scan</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>probe_subt_tunnel_tile_2</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <include>
+      <uri>model://subt_tunnel_tile_5</uri>
+      <name>subt_tunnel_tile_5</name>
+      <pose>0 40 0 0 0 0</pose>
+    </include>
+    <model name="probe_subt_tunnel_tile_5">
+      <static>true</static>
+      <pose>3 41 1 0 0 0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>5</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.14159265</min_angle>
+                <max_angle>3.14159265</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.05</min>
+              <max>25</max>
+              <resolution>.01</resolution>
+            </range>
+          </ray>
+          <plugin name="ray_subt_tunnel_tile_5" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/offline/subt_tunnel_tile_5/scan</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>probe_subt_tunnel_tile_5</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <include>
+      <uri>model://subt_tunnel_tile_blocker</uri>
+      <name>subt_tunnel_tile_blocker</name>
+      <pose>40 40 0 0 0 0</pose>
+    </include>
+    <model name="probe_subt_tunnel_tile_blocker">
+      <static>true</static>
+      <pose>43 41 1 0 0 0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>5</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.14159265</min_angle>
+                <max_angle>3.14159265</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.05</min>
+              <max>25</max>
+              <resolution>.01</resolution>
+            </range>
+          </ray>
+          <plugin name="ray_subt_tunnel_tile_blocker" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/offline/subt_tunnel_tile_blocker/scan</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>probe_subt_tunnel_tile_blocker</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <plugin name="states" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+    </plugin>
+    <gui>
+      <camera name="user_camera">
+        <pose>70 -70 70 0 .6 2.1</pose>
+      </camera>
+    </gui>
+  </world>
+</sdf>

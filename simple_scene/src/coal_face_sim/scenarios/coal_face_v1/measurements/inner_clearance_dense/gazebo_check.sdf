@@ -1,0 +1,1169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.6">
+  <world name="clearance_checks">
+    <include>
+      <uri>model://subt_tunnel_tile_5</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <model name="probe_0">
+      <static>true</static>
+      <pose>0.0 1.3855583347321954e-13 1.0 0 1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_0" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_0</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_0</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_1">
+      <static>true</static>
+      <pose>0.0 1.3855583347321954e-13 0.010499999999999834 0 -1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_1" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_1</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_1</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_2">
+      <static>true</static>
+      <pose>0.0 1.3855583347321954e-13 1.0004999999999997 0 0.0 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_2" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_2</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_2</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_3">
+      <static>true</static>
+      <pose>0.0 1.3855583347321954e-13 1.0004999999999997 0 0.0 3.141592653589793</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_3" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_3</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_3</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_4">
+      <static>true</static>
+      <pose>0.0 1.3855583347321954e-13 2.8004999999999995 0 0.0 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_4" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_4</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_4</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_5">
+      <static>true</static>
+      <pose>0.0 1.3855583347321954e-13 2.8004999999999995 0 0.0 3.141592653589793</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_5" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_5</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_5</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_6">
+      <static>true</static>
+      <pose>0.0 -7.64999999999997 1.0 0 1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_6" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_6</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_6</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_7">
+      <static>true</static>
+      <pose>0.0 -7.64999999999997 0.010499999999999834 0 -1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_7" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_7</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_7</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_8">
+      <static>true</static>
+      <pose>0.0 -7.64999999999997 1.0004999999999997 0 0.0 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_8" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_8</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_8</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_9">
+      <static>true</static>
+      <pose>0.0 -7.64999999999997 1.0004999999999997 0 0.0 3.141592653589793</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_9" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_9</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_9</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_10">
+      <static>true</static>
+      <pose>0.0 -7.64999999999997 2.8004999999999995 0 0.0 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_10" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_10</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_10</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_11">
+      <static>true</static>
+      <pose>0.0 -7.64999999999997 2.8004999999999995 0 0.0 3.141592653589793</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_11" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_11</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_11</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <include>
+      <uri>model://subt_tunnel_tile_2</uri>
+      <pose>40 0 0 0 0 0</pose>
+    </include>
+    <model name="probe_12">
+      <static>true</static>
+      <pose>42.926117308328 -2.931748188946343 1.0 0 1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_12" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_12</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_12</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_13">
+      <static>true</static>
+      <pose>42.926117308328 -2.931748188946343 0.010499999999999945 0 -1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_13" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_13</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_13</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_14">
+      <static>true</static>
+      <pose>42.926117308328 -2.931748188946343 1.0005 0 0.0 2.3565926535897934</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_14" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_14</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_14</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_15">
+      <static>true</static>
+      <pose>42.926117308328 -2.931748188946343 1.0005 0 0.0 5.498185307179586</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_15" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_15</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_15</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_16">
+      <static>true</static>
+      <pose>42.926117308328 -2.931748188946343 2.8004999999999995 0 0.0 2.3565926535897934</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_16" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_16</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_16</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_17">
+      <static>true</static>
+      <pose>42.926117308328 -2.931748188946343 2.8004999999999995 0 0.0 5.498185307179586</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_17" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_17</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_17</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_18">
+      <static>true</static>
+      <pose>40.26333604994625 -7.720224764648117 1.0 0 1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_18" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_18</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_18</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_19">
+      <static>true</static>
+      <pose>40.26333604994625 -7.720224764648117 0.010499999999999945 0 -1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_19" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_19</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_19</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_20">
+      <static>true</static>
+      <pose>40.26333604994625 -7.720224764648117 1.0005 0 0.0 2.9115926535897936</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_20" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_20</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_20</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_21">
+      <static>true</static>
+      <pose>40.26333604994625 -7.720224764648117 1.0005 0 0.0 6.053185307179587</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_21" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_21</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_21</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_22">
+      <static>true</static>
+      <pose>40.26333604994625 -7.720224764648117 2.8004999999999995 0 0.0 2.9115926535897936</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_22" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_22</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_22</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_23">
+      <static>true</static>
+      <pose>40.26333604994625 -7.720224764648117 2.8004999999999995 0 0.0 6.053185307179587</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_23" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_23</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_23</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <include>
+      <uri>model://subt_tunnel_tile_1</uri>
+      <pose>80 0 0 0 0 0</pose>
+    </include>
+    <model name="probe_24">
+      <static>true</static>
+      <pose>84.0 0.0 1.0 0 1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_24" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_24</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_24</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_25">
+      <static>true</static>
+      <pose>84.0 0.0 0.010499999999999834 0 -1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_25" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_25</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_25</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_26">
+      <static>true</static>
+      <pose>84.0 0.0 1.0004999999999997 0 0.0 1.5707963267948966</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_26" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_26</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_26</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_27">
+      <static>true</static>
+      <pose>84.0 0.0 1.0004999999999997 0 0.0 4.71238898038469</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_27" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_27</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_27</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_28">
+      <static>true</static>
+      <pose>84.0 0.0 2.8004999999999995 0 0.0 1.5707963267948966</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_28" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_28</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_28</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_29">
+      <static>true</static>
+      <pose>84.0 0.0 2.8004999999999995 0 0.0 4.71238898038469</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_29" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_29</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_29</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_30">
+      <static>true</static>
+      <pose>80.0 -7.349999999999988 1.0 0 1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_30" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_30</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_30</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_31">
+      <static>true</static>
+      <pose>80.0 -7.349999999999988 0.010499999999999834 0 -1.5707963267948966 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_31" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_31</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_31</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_32">
+      <static>true</static>
+      <pose>80.0 -7.349999999999988 1.0004999999999997 0 0.0 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_32" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_32</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_32</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_33">
+      <static>true</static>
+      <pose>80.0 -7.349999999999988 1.0004999999999997 0 0.0 3.141592653589793</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_33" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_33</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_33</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_34">
+      <static>true</static>
+      <pose>80.0 -7.349999999999988 2.8004999999999995 0 0.0 0.0</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_34" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_34</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_34</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    <model name="probe_35">
+      <static>true</static>
+      <pose>80.0 -7.349999999999988 2.8004999999999995 0 0.0 3.141592653589793</pose>
+      <link name="probe">
+        <sensor name="ray" type="ray">
+          <always_on>true</always_on>
+          <update_rate>2</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>.001</min>
+              <max>10</max>
+              <resolution>.0001</resolution>
+            </range>
+          </ray>
+          <plugin name="probe_35" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+              <remapping>~/out:=/clearance_check/probe_35</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <frame_name>probe_35</frame_name>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+  </world>
+</sdf>

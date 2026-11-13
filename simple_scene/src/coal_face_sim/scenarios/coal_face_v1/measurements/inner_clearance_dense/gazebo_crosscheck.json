@@ -1,0 +1,367 @@
+{
+  "method": "Independent gzserver ODE CPU ray sensors, static representative stations, floor/roof and both sides at 1.0 and 2.8 m.",
+  "rays": [
+    {
+      "topic": "/clearance_check/probe_0",
+      "model": "subt_tunnel_tile_5",
+      "station": 195,
+      "measurement": "floor",
+      "expected_range_m": 0.9995000000000002,
+      "samples": 3,
+      "actual_range_m": 0.9994999766349792,
+      "error_m": -2.336502091804249e-08
+    },
+    {
+      "topic": "/clearance_check/probe_1",
+      "model": "subt_tunnel_tile_5",
+      "station": 195,
+      "measurement": "roof",
+      "expected_range_m": 3.4741410000000004,
+      "samples": 3,
+      "actual_range_m": 3.4741411209106445,
+      "error_m": 1.2091064416352992e-07
+    },
+    {
+      "topic": "/clearance_check/probe_2",
+      "model": "subt_tunnel_tile_5",
+      "station": 195,
+      "measurement": "left_1.0",
+      "expected_range_m": 2.635300964794483,
+      "samples": 3,
+      "actual_range_m": 2.635300874710083,
+      "error_m": -9.008439993962725e-08
+    },
+    {
+      "topic": "/clearance_check/probe_3",
+      "model": "subt_tunnel_tile_5",
+      "station": 195,
+      "measurement": "right_1.0",
+      "expected_range_m": 2.635300866302628,
+      "samples": 3,
+      "actual_range_m": 2.635300397872925,
+      "error_m": -4.6842970302662934e-07
+    },
+    {
+      "topic": "/clearance_check/probe_4",
+      "model": "subt_tunnel_tile_5",
+      "station": 195,
+      "measurement": "left_2.8",
+      "expected_range_m": 1.7927498994435966,
+      "samples": 3,
+      "actual_range_m": 1.7927500009536743,
+      "error_m": 1.015100776768918e-07
+    },
+    {
+      "topic": "/clearance_check/probe_5",
+      "model": "subt_tunnel_tile_5",
+      "station": 195,
+      "measurement": "right_2.8",
+      "expected_range_m": 1.7927496809374788,
+      "samples": 3,
+      "actual_range_m": 1.7927497625350952,
+      "error_m": 8.159761644144226e-08
+    },
+    {
+      "topic": "/clearance_check/probe_6",
+      "model": "subt_tunnel_tile_5",
+      "station": 42,
+      "measurement": "floor",
+      "expected_range_m": 0.9995000000000002,
+      "samples": 3,
+      "actual_range_m": 0.9994999766349792,
+      "error_m": -2.336502091804249e-08
+    },
+    {
+      "topic": "/clearance_check/probe_7",
+      "model": "subt_tunnel_tile_5",
+      "station": 42,
+      "measurement": "roof",
+      "expected_range_m": 3.1829620000000003,
+      "samples": 3,
+      "actual_range_m": 3.18296217918396,
+      "error_m": 1.7918395966987077e-07
+    },
+    {
+      "topic": "/clearance_check/probe_8",
+      "model": "subt_tunnel_tile_5",
+      "station": 42,
+      "measurement": "left_1.0",
+      "expected_range_m": 2.7836001150635363,
+      "samples": 3,
+      "actual_range_m": 2.783599853515625,
+      "error_m": -2.6154791132881883e-07
+    },
+    {
+      "topic": "/clearance_check/probe_9",
+      "model": "subt_tunnel_tile_5",
+      "station": 42,
+      "measurement": "right_1.0",
+      "expected_range_m": 2.8463361883547007,
+      "samples": 3,
+      "actual_range_m": 2.8463361263275146,
+      "error_m": -6.202718605408108e-08
+    },
+    {
+      "topic": "/clearance_check/probe_10",
+      "model": "subt_tunnel_tile_5",
+      "station": 42,
+      "measurement": "left_2.8",
+      "expected_range_m": 2.186492173888613,
+      "samples": 3,
+      "actual_range_m": 2.1864922046661377,
+      "error_m": 3.0777524528957656e-08
+    },
+    {
+      "topic": "/clearance_check/probe_11",
+      "model": "subt_tunnel_tile_5",
+      "station": 42,
+      "measurement": "right_2.8",
+      "expected_range_m": 1.9996794427960844,
+      "samples": 3,
+      "actual_range_m": 1.9996798038482666,
+      "error_m": 3.610521821517665e-07
+    },
+    {
+      "topic": "/clearance_check/probe_12",
+      "model": "subt_tunnel_tile_2",
+      "station": 152,
+      "measurement": "floor",
+      "expected_range_m": 0.9995,
+      "samples": 3,
+      "actual_range_m": 0.9994999766349792,
+      "error_m": -2.3365020807020187e-08
+    },
+    {
+      "topic": "/clearance_check/probe_13",
+      "model": "subt_tunnel_tile_2",
+      "station": 152,
+      "measurement": "roof",
+      "expected_range_m": 3.7420492597847304,
+      "samples": 3,
+      "actual_range_m": 3.742049217224121,
+      "error_m": -4.2560609259112425e-08
+    },
+    {
+      "topic": "/clearance_check/probe_14",
+      "model": "subt_tunnel_tile_2",
+      "station": 152,
+      "measurement": "left_1.0",
+      "expected_range_m": 3.321148445307184,
+      "samples": 3,
+      "actual_range_m": 3.3211493492126465,
+      "error_m": 9.039054624793152e-07
+    },
+    {
+      "topic": "/clearance_check/probe_15",
+      "model": "subt_tunnel_tile_2",
+      "station": 152,
+      "measurement": "right_1.0",
+      "expected_range_m": 2.2921653028730966,
+      "samples": 3,
+      "actual_range_m": 2.292163372039795,
+      "error_m": -1.9308333016887502e-06
+    },
+    {
+      "topic": "/clearance_check/probe_16",
+      "model": "subt_tunnel_tile_2",
+      "station": 152,
+      "measurement": "left_2.8",
+      "expected_range_m": 2.5016976983166086,
+      "samples": 3,
+      "actual_range_m": 2.5016984939575195,
+      "error_m": 7.956409109333151e-07
+    },
+    {
+      "topic": "/clearance_check/probe_17",
+      "model": "subt_tunnel_tile_2",
+      "station": 152,
+      "measurement": "right_2.8",
+      "expected_range_m": 1.679387020598972,
+      "samples": 3,
+      "actual_range_m": 1.6793853044509888,
+      "error_m": -1.7161479832772386e-06
+    },
+    {
+      "topic": "/clearance_check/probe_18",
+      "model": "subt_tunnel_tile_2",
+      "station": 41,
+      "measurement": "floor",
+      "expected_range_m": 0.9995,
+      "samples": 3,
+      "actual_range_m": 0.9994999766349792,
+      "error_m": -2.3365020807020187e-08
+    },
+    {
+      "topic": "/clearance_check/probe_19",
+      "model": "subt_tunnel_tile_2",
+      "station": 41,
+      "measurement": "roof",
+      "expected_range_m": 3.2533271121858425,
+      "samples": 3,
+      "actual_range_m": 3.2533271312713623,
+      "error_m": 1.9085519831207876e-08
+    },
+    {
+      "topic": "/clearance_check/probe_20",
+      "model": "subt_tunnel_tile_2",
+      "station": 41,
+      "measurement": "left_1.0",
+      "expected_range_m": 2.7766549864964025,
+      "samples": 3,
+      "actual_range_m": 2.77665638923645,
+      "error_m": 1.4027400476734897e-06
+    },
+    {
+      "topic": "/clearance_check/probe_21",
+      "model": "subt_tunnel_tile_2",
+      "station": 41,
+      "measurement": "right_1.0",
+      "expected_range_m": 2.7179552026678446,
+      "samples": 3,
+      "actual_range_m": 2.7179558277130127,
+      "error_m": 6.250451680678282e-07
+    },
+    {
+      "topic": "/clearance_check/probe_22",
+      "model": "subt_tunnel_tile_2",
+      "station": 41,
+      "measurement": "left_2.8",
+      "expected_range_m": 1.9324056744156388,
+      "samples": 3,
+      "actual_range_m": 1.932407259941101,
+      "error_m": 1.5855254622554327e-06
+    },
+    {
+      "topic": "/clearance_check/probe_23",
+      "model": "subt_tunnel_tile_2",
+      "station": 41,
+      "measurement": "right_2.8",
+      "expected_range_m": 1.880023576740635,
+      "samples": 3,
+      "actual_range_m": 1.880024790763855,
+      "error_m": 1.2140232199531198e-06
+    },
+    {
+      "topic": "/clearance_check/probe_24",
+      "model": "subt_tunnel_tile_1",
+      "station": 232,
+      "measurement": "floor",
+      "expected_range_m": 0.9995000000000002,
+      "samples": 3,
+      "actual_range_m": 0.9994999766349792,
+      "error_m": -2.336502091804249e-08
+    },
+    {
+      "topic": "/clearance_check/probe_25",
+      "model": "subt_tunnel_tile_1",
+      "station": 232,
+      "measurement": "roof",
+      "expected_range_m": 3.474141000000001,
+      "samples": 3,
+      "actual_range_m": 3.4741411209106445,
+      "error_m": 1.2091064371944071e-07
+    },
+    {
+      "topic": "/clearance_check/probe_26",
+      "model": "subt_tunnel_tile_1",
+      "station": 232,
+      "measurement": "left_1.0",
+      "expected_range_m": 2.7597946325862326,
+      "samples": 3,
+      "actual_range_m": 2.7597944736480713,
+      "error_m": -1.589381612987495e-07
+    },
+    {
+      "topic": "/clearance_check/probe_27",
+      "model": "subt_tunnel_tile_1",
+      "station": 232,
+      "measurement": "right_1.0",
+      "expected_range_m": 2.8901087854268046,
+      "samples": 3,
+      "actual_range_m": 2.890108346939087,
+      "error_m": -4.3848771769106065e-07
+    },
+    {
+      "topic": "/clearance_check/probe_28",
+      "model": "subt_tunnel_tile_1",
+      "station": 232,
+      "measurement": "left_2.8",
+      "expected_range_m": 2.0565811756774184,
+      "samples": 3,
+      "actual_range_m": 2.0565812587738037,
+      "error_m": 8.30963853282185e-08
+    },
+    {
+      "topic": "/clearance_check/probe_29",
+      "model": "subt_tunnel_tile_1",
+      "station": 232,
+      "measurement": "right_2.8",
+      "expected_range_m": 2.183497756235153,
+      "samples": 3,
+      "actual_range_m": 2.183497905731201,
+      "error_m": 1.4949604798530913e-07
+    },
+    {
+      "topic": "/clearance_check/probe_30",
+      "model": "subt_tunnel_tile_1",
+      "station": 183,
+      "measurement": "floor",
+      "expected_range_m": 0.9995000000000002,
+      "samples": 3,
+      "actual_range_m": 0.9994999766349792,
+      "error_m": -2.336502091804249e-08
+    },
+    {
+      "topic": "/clearance_check/probe_31",
+      "model": "subt_tunnel_tile_1",
+      "station": 183,
+      "measurement": "roof",
+      "expected_range_m": 3.1829620000000003,
+      "samples": 3,
+      "actual_range_m": 3.182961940765381,
+      "error_m": -5.9234619431691726e-08
+    },
+    {
+      "topic": "/clearance_check/probe_32",
+      "model": "subt_tunnel_tile_1",
+      "station": 183,
+      "measurement": "left_1.0",
+      "expected_range_m": 2.866413665574276,
+      "samples": 3,
+      "actual_range_m": 2.8664138317108154,
+      "error_m": 1.6613653963659658e-07
+    },
+    {
+      "topic": "/clearance_check/probe_33",
+      "model": "subt_tunnel_tile_1",
+      "station": 183,
+      "measurement": "right_1.0",
+      "expected_range_m": 2.763510140686507,
+      "samples": 3,
+      "actual_range_m": 2.7635104656219482,
+      "error_m": 3.2493544122047524e-07
+    },
+    {
+      "topic": "/clearance_check/probe_34",
+      "model": "subt_tunnel_tile_1",
+      "station": 183,
+      "measurement": "left_2.8",
+      "expected_range_m": 2.019540283618981,
+      "samples": 3,
+      "actual_range_m": 2.019540786743164,
+      "error_m": 5.031241832043065e-07
+    },
+    {
+      "topic": "/clearance_check/probe_35",
+      "model": "subt_tunnel_tile_1",
+      "station": 183,
+      "measurement": "right_2.8",
+      "expected_range_m": 2.174439272069188,
+      "samples": 3,
+      "actual_range_m": 2.1744399070739746,
+      "error_m": 6.350047865311126e-07
+    }
+  ],
+  "max_abs_error_m": 1.9308333016887502e-06,
+  "passed": true
+}

@@ -1,0 +1,248 @@
+{
+  "units": "meters",
+  "source_sha256": {
+    "subt_tunnel_tile_1/model.sdf": "a20eac132865773b5056ffb1be770602ec3c6d3e85ac902f2789941482773af3",
+    "subt_tunnel_tile_1/meshes/tunnel_tile_1.dae": "cddc3cf51824a1fffa41affd267977637534f68591b1dcdfb5d07ee6e6a4da37",
+    "subt_tunnel_tile_2/model.sdf": "ec3cea481ce8e049222b00b0350cb0e914eb396d1e4c33755600c863c20e7aae",
+    "subt_tunnel_tile_2/meshes/tunnel_tile_2.dae": "031a9623a186c2213df42e64ebfe61b46f19386191c4b64ea1c113cc651f1a6e",
+    "subt_tunnel_tile_5/model.sdf": "0c8788dd1d62964bce7944da6a58a3e5cd6ed42d8aef43428097876cd7afb957",
+    "subt_tunnel_tile_5/meshes/tunnel_tile_5.dae": "cceb7742c06596700e41231d600bbd9a53e13d0932a26e9997238132744ba3d5",
+    "subt_tunnel_tile_blocker/model.sdf": "a754dae51daccf90901e191e44db61811cd113a20d6fabc576e804c8ad66db5a",
+    "subt_tunnel_tile_blocker/meshes/tunnel_tile_blocker.dae": "55e9dbba49c2049ac6a23bfbbad4474ebb320f100c9700a2d3ae2cc76f429a40"
+  },
+  "method": "Double-sided nearest ray/triangle intersection against all SDF collision meshes and ground boxes; local COLLADA unit and scene transforms included.",
+  "width_definition": "At each sampled centerline station, sum distances to first obstacles on both sides, in a plane normal to path; heights are measured above the centerline floor.",
+  "height_definition": "First overhead collision hit directly above sampled centerline floor.",
+  "limits": [
+    "Discrete samples do not prove global minimum clearance.",
+    "Widths at fixed heights are not a guarantee that a rectangular equipment envelope fits.",
+    "Junction central crossing has no single closed transverse width.",
+    "No real mine dimensions or safety clearance are implied."
+  ],
+  "sample_step_m": 0.05,
+  "models": [
+    {
+      "model": "subt_tunnel_tile_5",
+      "stations": 391,
+      "sampling_step_approx_m": 0.05,
+      "path_valid": true,
+      "invalid_station_indices": [],
+      "centerline_floor_z_m": {
+        "min_m": 0.0004999999999998339,
+        "max_m": 0.0004999999999998339,
+        "valid": 391,
+        "total": 391
+      },
+      "centerline_headroom_m": {
+        "min_m": 3.192962,
+        "max_m": 3.4841419948010404,
+        "valid": 391,
+        "total": 391
+      },
+      "width_by_height": {
+        "0.25": {
+          "min_m": 5.030733255583868,
+          "max_m": 5.296938406191453,
+          "valid": 391,
+          "total": 391
+        },
+        "0.5": {
+          "min_m": 5.199601553246661,
+          "max_m": 5.490853282921233,
+          "valid": 391,
+          "total": 391
+        },
+        "1.0": {
+          "min_m": 5.27060183109711,
+          "max_m": 5.698754564339174,
+          "valid": 391,
+          "total": 391
+        },
+        "1.5": {
+          "min_m": 5.12200463015008,
+          "max_m": 5.575978649377822,
+          "valid": 391,
+          "total": 391
+        },
+        "2.0": {
+          "min_m": 4.76069987386533,
+          "max_m": 5.3815447279885635,
+          "valid": 391,
+          "total": 391
+        },
+        "2.5": {
+          "min_m": 4.130389469240754,
+          "max_m": 4.703269598224392,
+          "valid": 391,
+          "total": 391
+        },
+        "2.8": {
+          "min_m": 3.585498780610558,
+          "max_m": 4.314906125014819,
+          "valid": 391,
+          "total": 391
+        },
+        "3.0": {
+          "min_m": 3.098096940501523,
+          "max_m": 3.713977307683761,
+          "valid": 391,
+          "total": 391
+        }
+      },
+      "measurement_region": "Straight Y=-9.75..9.75, X=0",
+      "collision_triangles": 12452
+    },
+    {
+      "model": "subt_tunnel_tile_2",
+      "stations": 305,
+      "sampling_step_approx_m": 0.05,
+      "path_valid": true,
+      "invalid_station_indices": [],
+      "centerline_floor_z_m": {
+        "min_m": 0.0004999999999999449,
+        "max_m": 0.0004999999999999449,
+        "valid": 305,
+        "total": 305
+      },
+      "centerline_headroom_m": {
+        "min_m": 3.2633271121858423,
+        "max_m": 3.8160687450500443,
+        "valid": 305,
+        "total": 305
+      },
+      "width_by_height": {
+        "0.25": {
+          "min_m": 5.048873168890667,
+          "max_m": 5.28910734206309,
+          "valid": 305,
+          "total": 305
+        },
+        "0.5": {
+          "min_m": 5.220630396084538,
+          "max_m": 5.4917780185664,
+          "valid": 305,
+          "total": 305
+        },
+        "1.0": {
+          "min_m": 5.270121293236141,
+          "max_m": 5.861560930332995,
+          "valid": 305,
+          "total": 305
+        },
+        "1.5": {
+          "min_m": 5.121537932698887,
+          "max_m": 5.736993003099753,
+          "valid": 305,
+          "total": 305
+        },
+        "2.0": {
+          "min_m": 4.760267237359958,
+          "max_m": 5.3899170644291425,
+          "valid": 305,
+          "total": 305
+        },
+        "2.5": {
+          "min_m": 4.1300176442525185,
+          "max_m": 4.8743449003692465,
+          "valid": 305,
+          "total": 305
+        },
+        "2.8": {
+          "min_m": 3.5851756157487693,
+          "max_m": 4.34541558736526,
+          "valid": 305,
+          "total": 305
+        },
+        "3.0": {
+          "min_m": 3.09782021045784,
+          "max_m": 3.733333650714421,
+          "valid": 305,
+          "total": 305
+        }
+      },
+      "measurement_region": "Quarter-circle R=10, center=(10,-10), inward 0.25 m from openings; radial cross sections",
+      "collision_triangles": 10404
+    },
+    {
+      "model": "subt_tunnel_tile_1",
+      "stations": 464,
+      "sampling_step_approx_m": 0.05,
+      "path_valid": true,
+      "invalid_station_indices": [],
+      "centerline_floor_z_m": {
+        "min_m": 0.0004999999999998339,
+        "max_m": 0.0004999999999998339,
+        "valid": 464,
+        "total": 464
+      },
+      "centerline_headroom_m": {
+        "min_m": 3.192962,
+        "max_m": 3.4841420000000003,
+        "valid": 464,
+        "total": 464
+      },
+      "width_by_height": {
+        "0.25": {
+          "min_m": 5.030733744457679,
+          "max_m": 5.29693868970465,
+          "valid": 464,
+          "total": 464
+        },
+        "0.5": {
+          "min_m": 5.199601791836079,
+          "max_m": 5.49085345884365,
+          "valid": 464,
+          "total": 464
+        },
+        "1.0": {
+          "min_m": 5.270601001743442,
+          "max_m": 5.70153142893922,
+          "valid": 464,
+          "total": 464
+        },
+        "1.5": {
+          "min_m": 5.122003630150081,
+          "max_m": 5.577109541726193,
+          "valid": 464,
+          "total": 464
+        },
+        "2.0": {
+          "min_m": 4.76069914759362,
+          "max_m": 5.38411756697473,
+          "valid": 464,
+          "total": 464
+        },
+        "2.5": {
+          "min_m": 4.130388306357432,
+          "max_m": 4.703812058906583,
+          "valid": 464,
+          "total": 464
+        },
+        "2.8": {
+          "min_m": 3.585496418515324,
+          "max_m": 4.319404947629694,
+          "valid": 464,
+          "total": 464
+        },
+        "3.0": {
+          "min_m": 3.0980945784062888,
+          "max_m": 3.7140334045428087,
+          "valid": 464,
+          "total": 464
+        }
+      },
+      "measurement_region": "Four arms: 4..9.75 m from junction center; central open crossing excluded from width statistics",
+      "collision_triangles": 21004,
+      "junction_center_headroom_m": 3.4841409999999997
+    },
+    {
+      "model": "subt_tunnel_tile_blocker",
+      "inner_clearance": "not applicable: closure component, not a tunnel passage",
+      "outer_size_xyz_m": [
+        7.547804559999999,
+        7.547804559999999,
+        7.54780456
+      ]
+    }
+  ]
+}

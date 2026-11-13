@@ -1,0 +1,10 @@
+shearer_motion:
+  ros__parameters:
+    entity_name: shearer
+    period: 40.0
+    rate: 50.0
+    use_sim_time: true
+    x: 0.0
+    y_max: 2.0
+    y_min: 1.0
+    z: 0.8005

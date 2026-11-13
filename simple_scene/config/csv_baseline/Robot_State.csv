@@ -1,0 +1,1 @@
+﻿table_schema_version,stamp_sec,stamp_nanosec,frame_id,schema_version,experiment_id,run_id,scene_id,scene_version,robot_id,sequence,work_mode,zone_id,is_moving,commanded_linear_speed_mps,commanded_velocity_map_mps_x,commanded_velocity_map_mps_y,commanded_velocity_map_mps_z,commanded_yaw_rate_radps

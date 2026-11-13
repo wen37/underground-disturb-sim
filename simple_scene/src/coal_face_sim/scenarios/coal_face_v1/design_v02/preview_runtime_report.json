@@ -1,0 +1,9 @@
+{
+  "expected_model_count": 192,
+  "loaded_model_count": 192,
+  "missing_models": [],
+  "clock_samples": 20,
+  "clock_duration_s": 1.9000000000000057,
+  "static_preview_only": true,
+  "passed": true
+}

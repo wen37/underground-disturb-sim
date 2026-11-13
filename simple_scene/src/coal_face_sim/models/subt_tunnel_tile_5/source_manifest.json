@@ -1,0 +1,70 @@
+{
+  "source": "https://fuel.gazebosim.org/1.0/OpenRobotics/models/Tunnel%20Tile%205",
+  "version": 14,
+  "file_tree": [
+    {
+      "name": "materials",
+      "path": "/materials",
+      "children": [
+        {
+          "name": "scripts",
+          "path": "/materials/scripts",
+          "children": [
+            {
+              "name": "tunnel_tile.material",
+              "path": "/materials/scripts/tunnel_tile.material"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "meshes",
+      "path": "/meshes",
+      "children": [
+        {
+          "name": "tunnel_tile_5.dae",
+          "path": "/meshes/tunnel_tile_5.dae"
+        }
+      ]
+    },
+    {
+      "name": "metadata.pbtxt",
+      "path": "/metadata.pbtxt"
+    },
+    {
+      "name": "model.config",
+      "path": "/model.config"
+    },
+    {
+      "name": "model.sdf",
+      "path": "/model.sdf"
+    },
+    {
+      "name": "thumbnails",
+      "path": "/thumbnails",
+      "children": [
+        {
+          "name": "1.jpg",
+          "path": "/thumbnails/1.jpg"
+        },
+        {
+          "name": "2.jpg",
+          "path": "/thumbnails/2.jpg"
+        },
+        {
+          "name": "3.jpg",
+          "path": "/thumbnails/3.jpg"
+        },
+        {
+          "name": "4.jpg",
+          "path": "/thumbnails/4.jpg"
+        },
+        {
+          "name": "5.jpg",
+          "path": "/thumbnails/5.jpg"
+        }
+      ]
+    }
+  ]
+}
