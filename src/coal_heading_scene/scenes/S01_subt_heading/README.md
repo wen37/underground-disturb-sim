@@ -1,9 +1,29 @@
-# SubT heading scene
+# SubT 掘进场景
 
-Four original-size Tunnel Tile 5 segments form a nominal80m corridor with a blocker. Assets are shared with `coal_face_sim/scenarios/coal_face_v1/models`; see the repository THIRD_PARTY.md and pinned asset manifests. No duplicate meshes are shipped here.
+四段原始尺寸的 Tunnel Tile 5 巷道模型拼接成名义长度为 80 m 的巷道，末端设置封堵模型。场景共享使用 [模型资源](../../support/coal_face_sim/scenarios/coal_face_v1/models)，本目录不重复存放网格。资源来源、固定版本及许可见 [第三方资源说明](../../references/THIRD_PARTY.md) 和 [资源清单](../../support/coal_face_sim/scenarios/coal_face_v1/asset_manifest.json)。
 
-The fixed station and body-mounted target use the map frame tree. This `heading-runtime-1` profile is intentionally separate from the legacy `0.1.0` mobile-sensor scene schema: do not pass it to the generic scene_loader. Use the heading experiment runner. Legacy schemas/loaders remain unchanged.
+## 文件说明
 
-EBZ200H overall envelope X/Y/Z=3.2/11.6/2.43m. Official body height is2.0m;2.43m is the highest point with the cutting head horizontal. A simple envelope does not reproduce the machine shape.
+| 文件 | 用途 |
+| --- | --- |
+| `scenario.yaml` | 场景入口，定义坐标系、设备尺寸、测站、雷达、靶板与巷道布局 |
+| `scene_semantics.yaml` | 巷道几何声明与粉尘浓度分区 |
+| `demo_route.yaml` | 掘进机静止、行进及模拟截割的时间与位置安排 |
+| `world/scene.sdf` | Gazebo 场景、碰撞体、可视模型、传感器和插件 |
 
-Respirable dust2/10/20mg/m³ is an uncalibrated test scenario. The high face zone is mathematically tested but not sampled by live rays in this occluded layout. Motion is kinematic, not track/contact dynamics. Mock is a constant+0.02m and ignores concentration. See docs/HEADING_QUICKSTART.md at repository root for commands and limitations.
+## 坐标系与启动方式
+
+固定测站和机身靶板采用以 `map` 为全局坐标系的坐标树。本场景使用 `heading-runtime-1` 配置格式，与旧版 `0.1.0` 移动传感器场景格式分开，不应传入通用 `scene_loader`，应使用掘进场景实验运行器。
+
+运行命令与使用限制见 [当前场景操作说明](../../docs/HEADING_QUICKSTART.md)。配置键、坐标系名称、主题名、模型标识及工况枚举属于程序接口，保留英文；中文注释用于解释其含义。
+
+## 设备外廓
+
+EBZ200H 简化外廓的 X/Y/Z 尺寸为 3.2/11.6/2.43 m。官方机身高度为 2.0 m；2.43 m 表示截割头水平放置时的最高点。简单包围盒不能还原真实设备外形。
+
+## 粉尘与运动模型的适用范围
+
+- 呼吸性粉尘浓度 2、10、20 mg/m³ 是未经现场标定的测试设定值，不代表经过验证的现场测量结果。
+- 工作面高浓度区已进行数学测试，但在当前遮挡布局下，实际激光射线没有采样到该区域。
+- 掘进机运动采用运动学方式，不模拟履带与地面的接触动力学。
+- 当前 Mock 扰动固定增加 0.02 m，不使用粉尘浓度进行计算。

@@ -1,3 +1,4 @@
+# 演示路线：时间单位为秒，位置单位为米，行进速度单位为米/秒。
 scene_version: 1.0.0
 schema_version: heading-runtime-1
 scene_id: S01_subt_heading
@@ -6,16 +7,19 @@ time_unit: s
 position_unit: m
 speed_m_s: 0.2
 segments:
+# 0～2 秒：IDLE，原地静止。
 - start_s: 0
   end_s: 2
   work_mode: IDLE
   start_y_m: 68
   end_y_m: 68
+# 2～12 秒：TRAVEL，沿 Y 轴从 68 m 行进至 70 m。
 - start_s: 2
   end_s: 12
   work_mode: TRAVEL
   start_y_m: 68
   end_y_m: 70
+# 12～15 秒：CUTTING_SIMULATED，在终点模拟截割。
 - start_s: 12
   end_s: 15
   work_mode: CUTTING_SIMULATED

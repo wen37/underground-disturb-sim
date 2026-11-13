@@ -1,7 +1,8 @@
-# Concentrations are explicitly prescribed test values, not validated site measurements.
+# 浓度为明确设定的测试值，不是经过验证的现场测量结果。
 schema_version: heading-runtime-1
 scene_id: S01_subt_heading
 scene_version: 1.0.0
+# 巷道网格几何及其在世界中的位置。
 geometry:
 - geometry_id: tunnel_0
   geometry_type: MESH
@@ -31,11 +32,14 @@ geometry:
   - 0
   - 70
   - 0
+# 呼吸性粉尘；单位为 mg/m³，浓度依据为未经现场标定的自定义测试场景。
 dust_kind: respirable
 concentration_unit: mg/m3
 concentration_basis: USER_DEFINED_TEST_SCENARIO_NOT_FIELD_CALIBRATED
 background_concentration_mg_m3: 0.0
+# 粉尘分区：平面多边形、垂直范围及各区设定浓度。
 zones:
+# 后部低浓度区：2 mg/m³。
 - zone_id: rear_low
   polygon_xy_m:
   - - -3.1
@@ -49,6 +53,7 @@ zones:
   z_min_m: 0
   z_max_m: 4.7
   respirable_concentration_mg_m3: 2
+# 驾驶区中等浓度区：10 mg/m³。
 - zone_id: driver_medium
   polygon_xy_m:
   - - -3.1
@@ -62,6 +67,7 @@ zones:
   z_min_m: 0
   z_max_m: 4.7
   respirable_concentration_mg_m3: 10
+# 工作面高浓度区：20 mg/m³。
 - zone_id: face_high
   polygon_xy_m:
   - - -3.1

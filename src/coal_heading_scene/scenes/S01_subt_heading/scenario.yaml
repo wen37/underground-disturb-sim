@@ -1,8 +1,10 @@
+# 场景版本与标识；candidate 表示候选配置。
 schema_version: heading-runtime-1
 scene_id: S01_subt_heading
 scene_version: 1.0.0
-title: SubT 80m掘进全链路场景
+title: SubT 80 米掘进全链路场景
 status: candidate
+# 全局坐标系及地图到世界坐标系的变换，位置单位为米，角度单位为弧度。
 global_frame: map
 world_frame: world
 map_to_world:
@@ -16,6 +18,7 @@ map_to_world:
   - 0.0
 world: world/scene.sdf
 semantics: scene_semantics.yaml
+# 掘进机初始位姿与简化外廓尺寸。
 robot:
   robot_id: robot_01
   body_frame: roadheader_base_link
@@ -33,6 +36,7 @@ robot:
   - 3.2
   - 11.6
   - 2.43
+# 固定测站相对于全局坐标系的位置和姿态。
 station:
   station_id: station_01
   frame: station_link
@@ -45,6 +49,7 @@ station:
   - 0.0
   - 0.0
   - 0.0
+# 二维激光雷达的安装位姿、扫描频率、束数和量程。
 sensors:
   lidar:
     sensor_id: lidar_01
@@ -64,6 +69,7 @@ sensors:
     angle_max_rad: 2.356194490192345
     range_min_m: 0.1
     range_max_m: 30.0
+# 机身固定靶板；LIDAR_TARGET 为程序使用的类型标识。
 target:
   target_id: target_01
   frame: target_link
@@ -77,9 +83,11 @@ target:
   - 0.0
   - 0.0
   - 0.0
+# 本场景不配置定位锚点和额外资产；路线由独立文件定义。
 anchors: []
 assets: []
 route: demo_route.yaml
+# 原始巷道拼块布局与地面支撑高度。
 layout:
   tile_model: subt_tunnel_tile_5
   tile_centers_y_m:
@@ -88,10 +96,10 @@ layout:
   - 50
   - 70
   nominal_length_m: 80
-  geometry_source: Original SubT meshes, not rectangular collision proxies
+  geometry_source: 原始 SubT 网格，不使用矩形碰撞体代替
   ground_support_z_m: 0.134
-  ground_support_note: Conservative top of tile ground mesh (max 0.133643m); static
-    kinematic support convention, not terrain following
+  ground_support_note: 采用巷道地面网格顶部的保守高度（最大值 0.133643 m）；此为静态运动学支撑约定，不模拟地形跟随
+# 设备规格与模型资源的来源记录。
 sources:
   roadheader: https://sanyglobal-img.sany.com.cn/product/picture_album/20220517/EBZ200H-164955.pdf
   lidar: https://www.hokuyo-aut.jp/search/single.php?serial=169

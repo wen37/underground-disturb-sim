@@ -1,10 +1,12 @@
 <sdf version="1.6">
   <world name="S01_subt_heading">
+    <!-- 物理引擎、仿真步长与实时倍率。 -->
     <physics name="default" type="ode">
       <max_step_size>.001</max_step_size>
       <real_time_update_rate>500</real_time_update_rate>
       <real_time_factor>0.5</real_time_factor>
     </physics>
+    <!-- 掘进机简化外廓、机身靶板及运动和真值插件。 -->
     <model name="robot_01">
       <plugin name="heading_trajectory" filename="libcoal_heading_trajectory.so"><speed_m_s>0.2</speed_m_s><travel_start_s>2</travel_start_s><travel_end_s>12</travel_end_s></plugin>
       <static>true</static>
@@ -51,6 +53,7 @@
           </material>
         </visual>
       </link>
+      <!-- 安装在机身上的激光靶板。 -->
       <link name="target_link">
         <pose>0 -5.9 0.585 0 0 0</pose>
         <collision name="target_plate_collision">
@@ -89,6 +92,7 @@
         <gaussian_noise>0</gaussian_noise>
       </plugin>
     </model>
+    <!-- 固定测站的底座、立柱及雷达安装结构。 -->
     <model name="station_01">
       <static>true</static>
       <pose>0 57.1 0.134 0 0 0</pose>
@@ -156,6 +160,7 @@
             <diffuse>0.1 0.3 0.8 1</diffuse>
           </material>
         </visual>
+        <!-- 二维激光雷达扫描参数与 ROS 数据发布插件。 -->
         <sensor name="lidar_01" type="ray">
           <always_on>true</always_on>
           <update_rate>40</update_rate>
@@ -190,6 +195,7 @@
         <child>lidar_link</child>
       </joint>
     </model>
+    <!-- 原始巷道拼块与末端封堵模型。 -->
     <include>
       <uri>model://subt_tunnel_tile_5</uri>
       <name>tunnel_0</name>
@@ -215,12 +221,14 @@
       <name>heading_blocker</name>
       <pose>0 83.77390228 0 0 0 0</pose>
     </include>
+    <!-- 场景状态服务插件。 -->
     <plugin name="heading_state" filename="libgazebo_ros_state.so">
       <ros>
         <namespace>/heading</namespace>
       </ros>
       <update_rate>100.0</update_rate>
     </plugin>
+    <!-- 场景定向照明。 -->
     <light name="heading_light" type="directional">
       <pose>0 0 10 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
