@@ -67,7 +67,7 @@ map为右手系，+Y前进、X横向、+Z向上。map→world恒等；map→stat
 
 场景结果在 `src/coal_scene_tools/experiments/heading/results/北京时间/`，含summary.json、config_snapshot.yaml、beam_detail.csv和场景实验报表.xlsx。固定距离输出在相邻实验目录的results。CSV以10Hz保存整帧1081束；40Hz所有正式帧参加在线验收和Excel分区工况统计。字段包含zone_id、work_mode、路径平均浓度mg/m³、机身xyz/rpy、靶标xyz和对齐差。不得把CSV保存频率误认为扫描频率。
 
-`heading_math.position_error`接受map下的stamp_s与xyz_m，检查有限数值和25ms对齐，返回dx/dy/dz及三维距离误差。批量评价报告配对数、拒绝数、平均误差、RMSE和P95；没有估计时不编造零误差。本阶段不实现定位算法。
+`heading_math.position_error`接受map下的stamp_s与xyz_m，检查有限数值和25ms对齐，返回dx/dy/dz及三维距离误差。当前仅实现单对位姿的误差计算与输入校验，尚未实现批量定位评价报告（配对数、拒绝数、平均误差、RMSE和P95）。场景Excel中的RMSE是Mock测距误差，不是定位误差。本阶段不实现定位算法。
 
 ## 已知局限
 
